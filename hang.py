@@ -1,19 +1,8 @@
 import random
 import string
+from word import *
 
 WORDLIST_FILENAME = "palavras.txt"
-
-def loadWords():
-    """
-    Depending on the size of the word list, this function may
-    take a while to finish.
-    """
-    print "Loading word list from file..."
-    inFile = open(WORDLIST_FILENAME, 'r', 0)
-    line = inFile.readline()
-    wordlist = string.split(line)
-    print "  ", len(wordlist), "words loaded."
-    return random.choice(wordlist)
 
 def isWordGuessed(secretWord, lettersGuessed):
 
@@ -106,7 +95,8 @@ class Hangman:
                 print 'Sorry, you ran out of guesses. The word was ', secretWord, '.'
 
 
-secretWord = loadWords().lower()
+word = Word()
+secretWord = word.loadWords().lower()
 hangman = Hangman()
 hangman.secretWord(secretWord)
 hangman.gameHangam()
