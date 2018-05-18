@@ -47,12 +47,19 @@ class Hangman:
             print 'You have ', self.guesses, 'guesses left.'
 
             available = getAvailableLetters()
+            auxAvailable = getAvailableLetters()
             for letter in available:
                 if letter in self.lettersGuessed:
                     available = available.replace(letter, '')
 
             print 'Available letters', available
             letter = raw_input('Please guess a letter: ')
+            while letter.__len__() > 1 or letter not in auxAvailable:
+                print '\nAttention!\n'
+                print 'You only need one letter at a time!'
+                print 'Available letters', available
+                letter = raw_input('Please guess a letter: ')
+
             if letter in self.lettersGuessed:
 
                 guessed = getGuessedWord()
