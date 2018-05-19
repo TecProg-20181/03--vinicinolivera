@@ -1,6 +1,7 @@
 import random
 import string
 import os.path
+import sys
 
 WORDLIST_FILENAME = "palavras.txt"
 
@@ -20,3 +21,4 @@ class Word:
             return random.choice(wordlist)
         else:
             print "File ", WORDLIST_FILENAME, "not found!"
+            sys.exit()
