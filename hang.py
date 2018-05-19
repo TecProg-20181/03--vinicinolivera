@@ -3,6 +3,7 @@ import string
 from word import *
 
 WORDLIST_FILENAME = "palavras.txt"
+GUESSES = 8
 
 def isWordGuessed(secretWord, lettersGuessed):
 
@@ -30,7 +31,7 @@ def getAvailableLetters():
 
 class Hangman:
 
-    guesses = 8
+    guesses = GUESSES
     lettersGuessed = []
     secretWord = ''
 
