@@ -97,7 +97,7 @@ class Hangman:
             print '------------'
 
         else:
-            if isWordGuessed(self.secretWord, self.lettersGuessed) == True:
+            if isWordGuessed(self.secretWord, self.lettersGuessed):
                 print 'Congratulations, you won!'
             else:
                 print 'Sorry, you ran out of guesses. The word was ', secretWord, '.'
